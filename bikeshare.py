@@ -2,6 +2,7 @@ import time
 import pandas as pd
 import numpy as np
 
+# Maps each supported city name to its corresponding CSV data file.
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -119,6 +120,7 @@ def user_stats(df):
 
 
 def main():
+    """Runs the bikeshare analysis program and allows the user to restart."""
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
