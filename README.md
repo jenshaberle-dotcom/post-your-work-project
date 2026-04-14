@@ -2,8 +2,12 @@
 
 This project explores bikeshare data using Python. It allows users to interactively analyze data from different cities and view useful statistics about travel times, stations, trip duration, and user information.
 
-## Information about how to use your project
+## Project motivation
 
+This project was created to practice Python programming, working with data in pandas, and using Git and GitHub for version control.
+
+
+## Information about how to use your project
 1. Clone this repository:
 
    ```bash
