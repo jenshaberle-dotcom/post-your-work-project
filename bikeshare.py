@@ -19,6 +19,12 @@ def get_user_choice(prompt, valid_options):
         print("Invalid input. Please try again.")
 
 
+def print_elapsed_time(start_time):
+    """Print the elapsed execution time for a statistics function."""
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-' * 40)
+
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -134,8 +140,7 @@ def user_stats(df):
     # Display earliest, most recent, and most common year of birth
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_elapsed_time(start_time)
 
 
 def main():
