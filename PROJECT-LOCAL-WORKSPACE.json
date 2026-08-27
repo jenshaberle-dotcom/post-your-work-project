@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "repository": "jenshaberle-dotcom/post-your-work-project",
+  "repository_id": 1210268492,
+  "canonical_branch": "main",
+  "canonical_checkout": {
+    "windows_path": "%USERPROFILE%\\repos\\post-your-work-project",
+    "wsl_path": "$HOME/projects/post-your-work-project",
+    "persistent_count": 1,
+    "must_track_canonical_branch": true
+  },
+  "temporary_workspaces": {
+    "windows_root": "%USERPROFILE%\\worktrees\\post-your-work-project",
+    "wsl_root": "$HOME/worktrees/post-your-work-project",
+    "lease_required": true
+  },
+  "prevention": {
+    "feature_work_on_canonical_checkout": "FORBIDDEN",
+    "duplicate_persistent_canonical": "CHECK",
+    "undeclared_workspace": "CHECK"
+  }
+}
