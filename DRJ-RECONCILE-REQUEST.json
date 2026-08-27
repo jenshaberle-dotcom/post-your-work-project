@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "request_state": "NO_REQUEST",
+  "repository": "jenshaberle-dotcom/post-your-work-project",
+  "repository_id": 1210268492,
+  "canonical_branch": "main",
+  "publisher": {"contract_version":1,"trigger":"REENTRY_HYGIENE_GATE","state":"IDLE_BASELINE"}
+}
