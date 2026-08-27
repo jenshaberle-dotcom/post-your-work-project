@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "repository": "jenshaberle-dotcom/post-your-work-project",
+  "repository_id": 1210268492,
+  "canonical_branch": "main",
+  "local_workspace_contract_path": "PROJECT-LOCAL-WORKSPACE.json",
+  "semantic_authority": "PROJECT",
+  "technical_reconciliation_owner": "DRJ",
+  "desired_state": {
+    "canonical_branch_required": true,
+    "noncanonical_branches_require_explicit_active_or_preserve_semantics": true
+  },
+  "preserve_by_default": ["dirty", "unpushed", "divergent", "unique", "ambiguous", "closed_unmerged"],
+  "reconcile_request": {
+    "path": "DRJ-RECONCILE-REQUEST.json",
+    "schema_version": 1,
+    "project_request_never_grants_effect_authority": true
+  }
+}
