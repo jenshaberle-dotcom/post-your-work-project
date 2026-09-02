@@ -1,0 +1,24 @@
+name: DRJ Branch Hygiene
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - DRJ-RECONCILE-REQUEST.json
+      - PROJECT-DRJ.json
+      - .github/workflows/drj-branch-hygiene.yml
+  schedule:
+    - cron: '41 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+  actions: read
+
+jobs:
+  branch-domain-janitor:
+    uses: jenshaberle-dotcom/Data-Retention-Janitor/.github/workflows/branch-domain-janitor-v1.yml@ee965a9433d2370b5c82101c186f90224c216509
+    with:
+      apply: true
+      max_effects: 250
