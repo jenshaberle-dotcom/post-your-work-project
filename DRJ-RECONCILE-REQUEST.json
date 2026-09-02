@@ -3,7 +3,7 @@
   "request_state": "READY",
   "repository": "jenshaberle-dotcom/post-your-work-project",
   "repository_id": 1210268492,
-  "observed_semantic_at": "2026-09-02T19:50:00Z",
+  "observed_semantic_at": "2026-09-02T20:31:00Z",
   "desired_state": {
     "canonical_branch": "main",
     "persistent_refs": ["main"],
@@ -14,53 +14,16 @@
     "project_state": "LEGACY_REPOSITORY_NOW_MANAGED_FOR_HYGIENE_ONLY"
   },
   "candidates": [
-    {
-      "target_type": "REMOTE_BRANCH",
-      "identity": "agent/portfolio-reentry-v1",
-      "semantic_disposition": "RETIRE",
-      "reason": "Fresh compare against main reports identical history: ahead_by=0, behind_by=0. The ref has no independent semantic value.",
-      "evidence_refs": ["GitHub compare main...agent/portfolio-reentry-v1 status=identical ahead_by=0 behind_by=0", "main@399719610353ef999e3cd7296daad234584ed0c9"]
-    },
-    {
-      "target_type": "REMOTE_BRANCH",
-      "identity": "documentation",
-      "semantic_disposition": "RETIRE",
-      "reason": "Fresh compare proves the legacy documentation branch is fully contained in main: ahead_by=0, behind_by=13.",
-      "evidence_refs": ["GitHub compare main...documentation ahead_by=0 behind_by=13", "main@399719610353ef999e3cd7296daad234584ed0c9"]
-    },
-    {
-      "target_type": "REMOTE_BRANCH",
-      "identity": "refactoring",
-      "semantic_disposition": "RETIRE",
-      "reason": "Fresh compare proves the legacy refactoring branch is fully contained in main: ahead_by=0, behind_by=13.",
-      "evidence_refs": ["GitHub compare main...refactoring ahead_by=0 behind_by=13", "main@399719610353ef999e3cd7296daad234584ed0c9"]
-    },
-    {
-      "target_type": "REMOTE_BRANCH",
-      "identity": "drj-013-work-admission-001a",
-      "semantic_disposition": "RETIRE",
-      "reason": "PR #1 merged; its DRJ non-blocking work-admission invariant is canonical on main.",
-      "evidence_refs": ["PR #1 merged 2026-08-28", "PROJECT-DRJ.json@main"]
-    },
-    {
-      "target_type": "REMOTE_BRANCH",
-      "identity": "agent/knowledge-research-layer-v1",
-      "semantic_disposition": "RETIRE",
-      "reason": "PR #2 merged and was deliberately reverted by merged PR #3 after the repository was declared legacy. The value was explicitly rejected from current main; the branch is retained nowhere as active authority.",
-      "evidence_refs": ["PR #2 merged 2026-08-30", "PR #3 merged 2026-08-30", "main@399719610353ef999e3cd7296daad234584ed0c9"]
-    },
-    {
-      "target_type": "REMOTE_BRANCH",
-      "identity": "agent/revert-active-portfolio-bootstrap",
-      "semantic_disposition": "RETIRE",
-      "reason": "PR #3 merged and its revert result is current main; the head branch is post-merge residue.",
-      "evidence_refs": ["PR #3 merged 2026-08-30", "main@399719610353ef999e3cd7296daad234584ed0c9"]
-    }
+    {"target_type":"REMOTE_BRANCH","identity":"agent/portfolio-reentry-v1","semantic_disposition":"RETIRE","reason":"Fresh compare proved identical to main.","evidence_refs":["GitHub compare ahead_by=0 behind_by=0"]},
+    {"target_type":"REMOTE_BRANCH","identity":"documentation","semantic_disposition":"RETIRE","reason":"Fresh compare proved fully contained in main.","evidence_refs":["GitHub compare ahead_by=0 behind_by=13"]},
+    {"target_type":"REMOTE_BRANCH","identity":"refactoring","semantic_disposition":"RETIRE","reason":"Fresh compare proved fully contained in main.","evidence_refs":["GitHub compare ahead_by=0 behind_by=13"]},
+    {"target_type":"REMOTE_BRANCH","identity":"drj-013-work-admission-001a","semantic_disposition":"RETIRE","reason":"PR #1 merged; DRJ non-blocking work-admission invariant is canonical on main.","evidence_refs":["PR #1 merged 2026-08-28","PROJECT-DRJ.json@main"]},
+    {"target_type":"REMOTE_BRANCH","identity":"agent/knowledge-research-layer-v1","semantic_disposition":"RETIRE","reason":"PR #2 merged and its active-portfolio bootstrap was explicitly rejected by merged revert PR #3.","evidence_refs":["PR #2 merged 2026-08-30","PR #3 merged 2026-08-30"]},
+    {"target_type":"REMOTE_BRANCH","identity":"agent/revert-active-portfolio-bootstrap","semantic_disposition":"RETIRE","reason":"PR #3 merged; revert result is current main.","evidence_refs":["PR #3 merged 2026-08-30"]},
+    {"target_type":"REMOTE_BRANCH","identity":"agent/76-branch-hygiene-handoff","semantic_disposition":"RETIRE","reason":"Merged Issue #76 project-side hygiene handoff carrier.","evidence_refs":["PR #4 merged 2026-09-02"]},
+    {"target_type":"REMOTE_BRANCH","identity":"agent/76-enable-drj-branch-domain-janitor","semantic_disposition":"RETIRE","reason":"Merged failed reusable-workflow canary; superseded by portable DRJ transport.","evidence_refs":["PR #5 merged 2026-09-02","DRJ PR #79"]},
+    {"target_type":"REMOTE_BRANCH","identity":"agent/76-portable-drj-janitor","semantic_disposition":"RETIRE","reason":"Ephemeral portable DRJ install carrier; live PR protection applies while open, then zero-ahead retirement is allowed after merge.","evidence_refs":["DRJ Issue #76","DRJ main@33d89e766b517c6461bc1e1fbb2d1b5854d8a782"]}
   ],
   "unresolved": [],
-  "publisher": {
-    "contract_version": 2,
-    "trigger": "PORTFOLIO_BRANCH_HYGIENE_ISSUE_76",
-    "request_is_effect_authority": false
-  }
+  "publisher": {"contract_version":2,"trigger":"PORTFOLIO_BRANCH_HYGIENE_ISSUE_76","request_is_effect_authority":false}
 }
