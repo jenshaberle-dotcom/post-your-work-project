@@ -6,6 +6,7 @@ on:
     paths:
       - DRJ-RECONCILE-REQUEST.json
       - PROJECT-DRJ.json
+      - .drj/portable_branch_domain_janitor_v1.py
       - .github/workflows/drj-branch-hygiene.yml
   schedule:
     - cron: '41 4 * * *'
@@ -18,7 +19,27 @@ permissions:
 
 jobs:
   branch-domain-janitor:
-    uses: jenshaberle-dotcom/Data-Retention-Janitor/.github/workflows/branch-domain-janitor-v1.yml@ee965a9433d2370b5c82101c186f90224c216509
-    with:
-      apply: true
-      max_effects: 250
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      DRJ_APPLY: 'true'
+      DRJ_MAX_EFFECTS: '250'
+      DRJ_EXPECTED_BLOB: b8e24bb3095643555817d5c4042c2522d64568c2
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify canonical DRJ executor blob
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual="$(git hash-object .drj/portable_branch_domain_janitor_v1.py)"
+          test "$actual" = "$DRJ_EXPECTED_BLOB"
+      - name: Run DRJ Branch Domain Janitor
+        run: python .drj/portable_branch_domain_janitor_v1.py
+      - name: Preserve exact outcome receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: drj-branch-domain-outcome-${{ github.run_id }}
+          path: /tmp/drj-branch-domain-outcome.json
+          if-no-files-found: error
+          retention-days: 90
